@@ -1,0 +1,27 @@
+{
+    "name": "nodejs-ex",
+    "version": "0.0.1",
+    "description": "Node.js sample app for OpenShift 3",
+    "main": "hello.js",
+    "dependencies": {
+      "s3-append": "^1.1.0",
+      "package-stream": "^3.0.1"
+    },
+    "engine": {
+      "node": "*",
+      "npm": "*"
+    },
+    "scripts": {
+      "start": "node hello.js"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/abs51295/node-test.git"
+    },
+    "author": "Aagam Shah",
+    "license": "CC-BY-1.0",
+    "bugs": {
+      "url": "http://github.com/openshift/node-test/issues"
+    },
+    "homepage": "http://github.com/openshift/node-test"
+  }
