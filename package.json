@@ -5,7 +5,10 @@
     "main": "hello.js",
     "dependencies": {
       "package-stream": "^3.0.1",
-      "jsonfile": "^4.0.0"
+      "jsonfile": "^4.0.0",
+      "aws-sdk": "^2.181.0",
+      "s3": "^4.4.0",
+      "s3fs": "^2.5.0"
     },
     "engine": {
       "node": "*",
