@@ -4,8 +4,8 @@
     "description": "Node.js sample app for OpenShift 3",
     "main": "hello.js",
     "dependencies": {
-      "s3-append": "^1.1.0",
-      "package-stream": "^3.0.1"
+      "package-stream": "^3.0.1",
+      "jsonfile": "^4.0.0"
     },
     "engine": {
       "node": "*",
