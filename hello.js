@@ -9,13 +9,25 @@ var fs = require('fs'),
         signatureVersion: "v4",
         s3DisableBodySigning: false
     });
-var file = 'node-package-details.json'
+var file = 'node-package-details-clean.json'
 var count = 0;
 var once = false;
 registry
     .on('package', function (pkg) {
         console.log(count++)
-        jsonfile.writeFile(file, pkg, {flag: 'a'}, function (err) {
+        if (pkg.keywords && typeof pkg.keywords === "string") {
+            pkg.keywords = pkg.keywords.split(',')
+        }
+        var cleanPkg = {
+            "name": pkg.name,
+            "description": pkg.description,
+            "version": pkg.version,
+            "keywords": pkg.keywords,
+            "dependencies": pkg.depNames,
+            "devDependencies": pkg.devDepNames,
+            "allDependencies": pkg.allDepNames
+        }
+        jsonfile.writeFile(file, cleanPkg, {flag: 'a'}, function (err) {
             if(err != null) {
                 console.error(err)
             }
