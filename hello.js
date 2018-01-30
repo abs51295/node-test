@@ -27,7 +27,8 @@ registry
             "devDependencies": pkg.devDepNames,
             "allDependencies": pkg.allDepNames,
             "homepage": pkg.homepage,
-            "repositoryurl": pkg.repository
+            "repositoryurl": pkg.repository,
+            "readme": pkg.readme
         }
         jsonfile.writeFile(file, cleanPkg, {flag: 'a'}, function (err) {
             if(err != null) {
