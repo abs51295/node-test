@@ -9,7 +9,7 @@ var fs = require('fs'),
         signatureVersion: "v4",
         s3DisableBodySigning: false
     });
-var file = 'node-package-details-clean.json'
+var file = 'node-package-details-with-url.json'
 var count = 0;
 var once = false;
 registry
@@ -25,7 +25,9 @@ registry
             "keywords": pkg.keywords,
             "dependencies": pkg.depNames,
             "devDependencies": pkg.devDepNames,
-            "allDependencies": pkg.allDepNames
+            "allDependencies": pkg.allDepNames,
+            "homepage": pkg.homepage,
+            "repositoryurl": pkg.repository
         }
         jsonfile.writeFile(file, cleanPkg, {flag: 'a'}, function (err) {
             if(err != null) {
